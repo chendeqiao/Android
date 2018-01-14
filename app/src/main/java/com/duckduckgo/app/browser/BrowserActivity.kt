@@ -294,6 +294,10 @@ class BrowserActivity : DuckDuckGoActivity() {
                 webView.goForward()
                 return true
             }
+            R.id.new_tab_menu_item -> {
+                launchNewBrowser()
+                return true
+            }
             R.id.settings_menu_item -> {
                 launchSettingsView()
                 return true
@@ -317,6 +321,12 @@ class BrowserActivity : DuckDuckGoActivity() {
         }, {
             Toast.makeText(this, R.string.fireDataCleared, Toast.LENGTH_SHORT).show()
         }).show()
+    }
+
+    private fun launchNewBrowser() {
+        val intent = BrowserActivity.intent(this)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_DOCUMENT
+        startActivity(intent)
     }
 
     private fun launchSettingsView() {

@@ -54,7 +54,6 @@
         <activity
             android:name=".BrowserActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:launchMode="singleTask"
             android:parentActivityName="com.duckduckgo.app.home.HomeActivity"
             android:screenOrientation="fullSensor" />
 

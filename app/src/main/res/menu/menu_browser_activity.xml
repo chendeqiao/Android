@@ -34,9 +34,16 @@
     <item
         android:id="@+id/back_menu_item"
         android:title="@string/back" />
+
     <item
         android:id="@+id/forward_menu_item"
         android:title="@string/forward" />
+
+    <item
+        android:id="@+id/new_tab_menu_item"
+        android:title="@string/newTab"
+        app:showAsAction="never" />
+
     <item
         android:id="@+id/refresh_menu_item"
         android:title="@string/refresh"
