@@ -36,6 +36,7 @@ import com.duckduckgo.app.browser.omnibar.OnBackKeyListener
 import com.duckduckgo.app.global.DuckDuckGoActivity
 import com.duckduckgo.app.global.ViewModelFactory
 import com.duckduckgo.app.global.view.*
+import com.duckduckgo.app.home.HomeActivity
 import com.duckduckgo.app.privacymonitor.model.PrivacyGrade
 import com.duckduckgo.app.privacymonitor.renderer.icon
 import com.duckduckgo.app.privacymonitor.ui.PrivacyDashboardActivity
@@ -295,7 +296,7 @@ class BrowserActivity : DuckDuckGoActivity() {
                 return true
             }
             R.id.new_tab_menu_item -> {
-                launchNewBrowser()
+                launchNewTab()
                 return true
             }
             R.id.settings_menu_item -> {
@@ -323,9 +324,9 @@ class BrowserActivity : DuckDuckGoActivity() {
         }).show()
     }
 
-    private fun launchNewBrowser() {
-        val intent = BrowserActivity.intent(this)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_DOCUMENT
+    private fun launchNewTab() {
+        val intent = HomeActivity.intent(this)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_DOCUMENT or Intent.FLAG_ACTIVITY_MULTIPLE_TASK
         startActivity(intent)
     }
 
